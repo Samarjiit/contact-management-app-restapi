@@ -8,6 +8,9 @@ const {
   updateContact,
   deleteContact,
 } = require('../controllers/contactController');
+const validateToken = require('../middleware/validateTokenHandler');
+
+router.use(validateToken);
 
 router.route('/').get(getContacts);  // //enter point api/contacts ke bad ye show hoga 
 router.route('/').post(createContact);

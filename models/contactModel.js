@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const contactSchema = mongoose.Schema(
-  {
+  {  //this is id who is creating the contact 
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "User",
+      ref: "User", //model name which it refer to is - User
     },
     name: {
       type: String,
