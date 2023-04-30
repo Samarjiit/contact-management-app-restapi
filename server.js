@@ -2,8 +2,9 @@
 
 const express = require('express');
 const errorHandler = require('./middleware/errorhandler');
+const connectDb = require('./config/dbConnection');
 const dotenv = require('dotenv').config(); //Dotenv module allows you to load environment variables from a file named .env into the process.env object, which can then be used throughout your application. config method reads the .env file in the root directory of your project, parses the key-value pairs, and adds them to the process.env object.
-
+connectDb();  //database connected
 const app = express();
 const port = process.env.PORT || 5000;
 
